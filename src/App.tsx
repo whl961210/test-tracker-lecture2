@@ -34,7 +34,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         {tasksCompleted}
-        <TasksComponent tasks={tasks} />
+        <TasksComponent tasks={tasks} incrementTime={incrementTime} />
       </header>
 
     </div>
