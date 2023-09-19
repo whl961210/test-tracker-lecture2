@@ -16,6 +16,15 @@ function App() {
   const [tasksCompleted, setTasksCompleted] = React.useState(0);
   const [taskCount, setTaskCount] = React.useState(0);
 
+  function incrementTime(taskName: string) {
+    //get the task
+    let task = tasks.getTask(taskName);
+    //increment the time
+    task!.hours += 1;
+    tasks.updateTask(task!.name, task!.description, task!.status, task!.hours);
+    setTaskCount(taskCount + 1);
+    console.log('in app' + taskCount);
+  }
   React.useEffect(() => {
     setTaskCount(tasks.getTasks().keys.length);
   }, []);
